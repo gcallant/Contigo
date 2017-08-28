@@ -7,11 +7,11 @@ buildscript {
     repositories {
         maven {
             name 'prok'
-            url 'https://repo.prok.pw/'
+            url 'https://djoveryde.000webhostapp.com/kcauldron/files/'
         }
         maven {
             name 'forge'
-            url 'http://files.minecraftforge.net/maven'
+            url 'http://files.minecraftforge.net/maven/'
         }
         maven {
             name 'sonatype'
@@ -21,11 +21,14 @@ buildscript {
             name 'spigot'
             url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
         }
-
+        flatDir {
+            dirs 'libs'
+        }
         mavenCentral()
+        mavenLocal()
     }
     dependencies {
-//        classpath files('FGS.jar')
+        classpath files('FGS.jar')
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
@@ -47,11 +50,11 @@ repositories {
     }
     maven {
         name 'prok'
-        url 'https://repo.prok.pw/'
+        url 'https://djoveryde.000webhostapp.com/kcauldron/files/'
     }
     maven {
         name 'forge'
-        url 'http://files.minecraftforge.net/maven'
+        url 'http://files.minecraftforge.net/maven/'
     }
     maven {
         name 'minecraft'
@@ -62,12 +65,17 @@ repositories {
         url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
     }
 
+    flatDir {
+        dirs 'libs'
+    }
+ 
     mavenCentral()
+    mavenLocal()
 }
 
 minecraft {
     version = '1.7.10'
-    mcpVersion = '9.05'
+    mcpVersion = '9.08'
     mainClass = 'cpw.mods.fml.relauncher.ServerLaunchWrapper'
     tweakClass = 'cpw.mods.fml.common.launcher.FMLTweaker'
     installerVersion = "1.4"
@@ -79,17 +87,11 @@ group = 'cyberdynecc'
 ext.buildInfoCached = null;
 
 def buildInfo(String key) {
-    if (!buildInfoCached) {
-        if (project.hasProperty('officialBuild')) {
-            buildInfoCached = new JsonSlurper().parse(new URL("http://i.yive.pw/thermos/version"))
-        } else {
-            buildInfoCached = [
-                    nextBuildNumber: 'UNOFFICIAL',
-                    version        : 'NONE'
-            ]
-        }
-    }
-    return key ? buildInfoCached[key] : buildInfoCached;
+	buildInfoCached = [
+		nextBuildNumber: 'UNOFFICIAL',
+		version        : 'NONE'
+	]
+    return buildInfoCached;
 }
 
 ext.gitInfoCached = null;
@@ -165,6 +167,7 @@ dependencies {
     libraries 'org.fusesource.jansi:jansi:1.11'
 	libraries 'com.koloboke:koloboke-impl-jdk8:1.0.0'
 	libraries 'java3d:vecmath:1.3.1'
+	libraries fileTree(dir: "libs", include: "*.jar")
 }
 
 packageUniversal {
@@ -289,7 +292,7 @@ publishing {
     repositories {
         maven {
             name 'ProK'
-            url 'https://repo.prok.pw/'
+            url 'https://djoveryde.000webhostapp.com/kcauldron/files/'
             credentials {
                 username project.hasProperty('prokRepoUsername') ? prokRepoUsername : null
                 password project.hasProperty('prokRepoPassword') ? prokRepoPassword : null
@@ -324,17 +327,18 @@ repositories {
     clear()
     maven {
         name 'prok'
-        url 'https://repo.prok.pw/'
+        url 'https://djoveryde.000webhostapp.com/kcauldron/files/'
     }
     maven {
         name 'forge'
-        url 'http://files.minecraftforge.net/maven'
+        url 'http://files.minecraftforge.net/maven/'
     }
     maven {
         name 'minecraft'
         url 'https://libraries.minecraft.net/'
     }
     mavenCentral()
+    mavenLocal()
 }
 dependencies {
 ''')
