@@ -38,7 +38,7 @@ P.S. **PLEASE** look at the release notes before downloading! :smile:
 
 ## Chat
 
-Feel free to drop in on the Contigo Discord chat [here](https://discord.gg/cNpacKk)
+Feel free to drop in on the Contigo Discord chat [here](https://discord.gg/9nuRZd2)
 
 ## Contributing
 
