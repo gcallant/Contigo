@@ -1,4 +1,7 @@
-# Since THERMOS is no longer being developed- and servers are reduced to using Sponge for 1.8+, this project is dedicated to renewing the ability for Minecraft servers to use native bukkit plugins along with Forge mods.
+# Since Spigot is now alive and well-functioning, this project is being archived until further notice. You may still fork this repository, and make any changes, but no new code will be added to this base, and no support will be offered. Thank you to everyone who contributed in an effort to revive Thermos and bring this project up to speed! 
+
+
+## Since THERMOS is no longer being developed- and servers are reduced to using Sponge for 1.8+, this project is dedicated to renewing the ability for Minecraft servers to use native bukkit plugins along with Forge mods.
 
 # Contigo
 
@@ -38,7 +41,7 @@ P.S. **PLEASE** look at the release notes before downloading! :smile:
 
 ## Chat
 
-Feel free to drop in on the Contigo Discord chat [here](https://discord.gg/9nuRZd2)
+Feel free to drop in on the Contigo Discord chat [here]()
 
 ## Contributing
 
